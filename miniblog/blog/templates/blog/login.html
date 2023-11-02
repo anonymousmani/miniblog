@@ -2,12 +2,12 @@
 {% load static %}
 {% block content %}
     <div class="col-sm-10">
-       <h3 class="my-5">Login</h3>
+       <h3 class="my-5 alert alert-info">Login</h3>
        <form action="" method="post">
         {% csrf_token %}
         {% for fm in form  %}
          <div class="form-group">
-            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}
+            {{fm.label_tag}} {{fm}}<small class="text-warning"> {{fm.errors|striptags}}</small>
          </div>
         {% endfor %}
         <input type="submit" class="btn btn-primary" value="Login">
