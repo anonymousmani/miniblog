@@ -2,7 +2,10 @@
 {% load static %}
 {% block content %}
     <div class="col-sm-10">
-       <h3 class="my-5">Logout page</h3>
-      
+       <h3 class="my-5 alert alert-info">Logout page</h3>
+       <p>Do u want to logout</p>
+       <form action="" method="post">
+       <input  class="text-bg-danger" href="{% url "logout" %}" type="button" value="Confirm">
+       </form>
     </div>
 {% endblock %}
