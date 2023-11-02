@@ -1,9 +1,5 @@
-# MiniBlog Web Application (Django-Based)
-
-<p align="center">
-  <img src="https://cdn.business2community.com/wp-content/uploads/2018/02/Blogging-For-Marketing-ENX2.jpg" hight="350" width="350" title="hover text">
- 
-   
+# MiniBlog Web Application <p align="left"> <img src="Blogging.jpg" hight="150" width="100" title="Blogging"></p>
+    
 Welcome to the MiniBlog web application, a simple yet powerful platform built with Django, designed for microblogging, user engagement, and content sharing. This user-friendly web app provides a variety of features, including user signup, login, contact us, reading blogs, and a dedicated "Author" group where authors can publish their thoughts and ideas while ensuring blog security.
 
 ## Key Features
