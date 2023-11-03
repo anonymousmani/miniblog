@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import Group
 from blog.form import user_form, blog_form, contact_form
-from .models import Post
+from .models import Post, contact
 
 # Create your views here.
 
@@ -65,8 +65,14 @@ def user_signup(request):
 
 # contact:
 def contact(request): 
-    fm = contact_form()
-    return render(request, "blog/contact.html", {'form': fm})
+    if request.method == 'POST':
+        nm = request.POST['name']
+        em = request.POST['email']
+        ad = request.POST['address']
+        msg = request.POST['message']
+        contact.objects.create(name=nm, email=em, address=ad, message=msg)
+        return HttpResponseRedirect('/')
+    return render(request, "blog/contact.html")
 
 # logout:
 def user_logout(request):
