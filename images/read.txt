@@ -1,0 +1,11 @@
+templtes are uploaded
+
+urls
+
+views
+
+form
+
+models
+
+admin
