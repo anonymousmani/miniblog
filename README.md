@@ -43,9 +43,9 @@ hunter
 
 ## ScreenShot
 ![home](images/image_2023-11-03_115702094.png)
-![home](images/image_2023-11-03_120153848.png)
-![home](images/image_2023-11-03_120312335.png)
-![home](images/image_2023-11-03_115702094.png)
+![dashboard](images/image_2023-11-03_121035016.png)
+![contct](images/image_2023-11-03_120153848.png)
+![signup](images/image_2023-11-03_120312335.png)
 ## Contribution
 
 We welcome contributions from developers, designers, and content creators to enhance and extend the MiniBlog application. If you have ideas for features, bug fixes, or improvements, please follow these steps:
