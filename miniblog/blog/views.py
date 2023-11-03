@@ -1,9 +1,10 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import messages
 import time
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout 
 from django.contrib.auth.forms import AuthenticationForm
-from blog.form import user_form, blog_form
+from django.contrib.auth.models import Group
+from blog.form import user_form, blog_form, contact_form
 from .models import Post
 
 # Create your views here.
@@ -20,8 +21,11 @@ def about(request):
 # Dashboard
 def dashboard(request):
     if request.user.is_authenticated:
-        posts = Post.objects.all()
-        return render(request, "blog/dashboard.html", {'stub':posts})
+        posts = Post.objects.all()  
+        user = request.user
+        full_name = user.get_full_name()
+        gps = user.groups.all()
+        return render(request, "blog/dashboard.html", {'stub': posts, 'full_name': full_name, 'groups': gps})
     else:
         return HttpResponseRedirect('/login/')
 
@@ -50,9 +54,9 @@ def user_signup(request):
     if request.method == 'POST':
         fm = user_form(request.POST)
         if fm.is_valid():
-            fm.save()
-            messages.success(request, 'your account is created!!')
-            time.sleep(2)
+            user = fm.save()
+            group = Group.objects.get(name="Author")
+            user.groups.add(group)
             return HttpResponseRedirect('/login/')
 
     else:
@@ -60,8 +64,9 @@ def user_signup(request):
     return render(request, "blog/signup.html", {'form': fm})
 
 # contact:
-def contact(request):
-    return render(request, "blog/contact.html")
+def contact(request): 
+    fm = contact_form()
+    return render(request, "blog/contact.html", {'form': fm})
 
 # logout:
 def user_logout(request):
@@ -85,11 +90,7 @@ def update_data(request, id):
         pi = Post.objects.get(pk=id)
         fm = blog_form(request.POST, instance=pi)
         if fm.is_valid():
-            ld = fm.cleaned_data['title']
-            nd = fm.cleaned_data['desc']
-            '''another way of saving data in DB is fm.save()'''
-            reg = blog_form(title=ld, desc=nd)
-            reg.save()
+            fm.save()
             return HttpResponseRedirect('/')
       else:
         pi = Post.objects.get(pk=id)
@@ -104,17 +105,19 @@ def posting(request):
       if request.method == 'POST':
           fm =blog_form(request.POST)
           if fm.is_valid():
-            ld = fm.cleaned_data['title']
-            nd = fm.cleaned_data['desc']
-            '''another way of saving data in DB is fm.save()'''
-            reg = blog_form(title=ld, desc=nd)
-            reg.save()
-            return HttpResponseRedirect("/dashboard/")
+             fm.save()
+             return HttpResponseRedirect("/dashboard/")
       else:    
        fm = blog_form()
       return render(request, 'blog/posting.html', {'form':fm})
     else:
         return HttpResponseRedirect('/login/')
+    
+# Reading:
+def read_data(request, id):
+        ds = Post.objects.get(pk=id)
+        return render(request, 'blog/display.html', {'data': ds})
+
 
 
 
