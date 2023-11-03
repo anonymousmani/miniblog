@@ -20,12 +20,17 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('', views.home, name='home'),
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('dashboard/', views.dashboard, name='dashboard'),
-    path('login/', views.login, name='login'),
-    path('signup/', views.signup, name='signup'),
-  #  path('logout/', views.logout, name='logout'),
+    path('login/', views.user_login, name='login'),
+    path('signup/', views.user_signup, name='signup'),
+    path('logout/', views.user_logout, name='logout'),
+    path('delete_data/<int:id>/', views.delete_data, name='deletedata'),
+    path('posting/', views.posting, name='newpost'),
+    path('update_data/<int:id>', views.update_data, name='updatedata'),
+    path('read_data/<int:id>', views.read_data, name='readdata'),
+    
 
 ]
