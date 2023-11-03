@@ -2,24 +2,27 @@
 {% load static %}
 {% block content %}
     <div class="col-sm-10">
-        <h3 class="mt-5">Contact Us</h3>
-        <form>
+        <h3 class="mt-5 alert alert-info">Contact Us</h3>
+        <form action="{% url 'contacts' %}" method="post">
+            
             <div class="form-row">
+                {% csrf_token %}
                 <div class="form-group col-md-6">
                     <label for="inputname">Name</label>
-                    <input type="text" class="form-control" id="inputName">
+                    <input type="text" class="form-control" name="name" id="inputName">
                 </div>
+                
                 <div class="form-group col-md-6">
                     <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail">
+                    <input type="email" class="form-control" name="email" id="inputEmail">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputaddress">Address</label>
-                    <input type="text" class="form-control" id="inputaddress">
+                    <input type="text" class="form-control" name="address" id="inputaddress">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="message">Message</label>
-                    <textarea class="form-control" id="message" row="3"></textarea>
+                    <textarea class="form-control" name="message" id="message" row="3"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">send</button>
             </div>   
