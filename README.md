@@ -1,4 +1,4 @@
-# MiniBlog Web Application <p align="left"> <img src="Blogging.jpg" hight="150" width="100" title="Blogging"></p>
+# MiniBlog Web Application <p align="left"> <img src="images/Blogging.jpg" hight="150" width="100" title="Blogging"></p>
     
 Welcome to the MiniBlog web application, a simple yet powerful platform built with Django, designed for microblogging, user engagement, and content sharing. This user-friendly web app provides a variety of features, including user signup, login, contact us, reading blogs, and a dedicated "Author" group where authors can publish their thoughts and ideas while ensuring blog security.
 
