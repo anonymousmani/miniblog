@@ -42,10 +42,10 @@ hunter
 5. Access the MiniBlog web app through your web browser and start exploring, reading, and engaging with the community.
 
 ## ScreenShot
-![home](images/image_2023-11-03_115702094.png)
-![dashboard](images/image_2023-11-03_121035016.png)
-![contct](images/image_2023-11-03_120153848.png)
-![signup](images/image_2023-11-03_120312335.png)
+![home](images/image_2023-11-03_115702094.png "Home")
+![dashboard](images/image_2023-11-03_121035016.png "Dashboard")
+![contct](images/image_2023-11-03_120153848.png "Contact")
+![signup](images/image_2023-11-03_120312335.png "Signup")
 ## Contribution
 
 We welcome contributions from developers, designers, and content creators to enhance and extend the MiniBlog application. If you have ideas for features, bug fixes, or improvements, please follow these steps:
