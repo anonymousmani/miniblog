@@ -19,17 +19,20 @@ Welcome to the MiniBlog web application, a simple yet powerful platform built wi
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/miniblog-django.git
+   git clone https://github.com/anonymousmani/miniblog.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd miniblog-django
+   cd miniblog
    ```
 
-3. Set up and configure your Django environment, including database settings and secret key.
-
+3.Admin account and password is:
+```
+admin
+hunter
+```
 4. Run the application using Django's development server:
 
    ```bash
@@ -58,6 +61,6 @@ This project is open source and licensed under the MIT License. See the [LICENSE
 
 For any questions, suggestions, or collaboration inquiries, feel free to reach out to the project maintainers:
 
-- [Your Name](https://github.com/yourusername)
+- [Instagram](https://instagram.com/x_ploits)
 
 Experience the world of microblogging, connect with authors, and engage with the MiniBlog community. Join us in sharing stories, experiences, and ideas with the MiniBlog web application.
