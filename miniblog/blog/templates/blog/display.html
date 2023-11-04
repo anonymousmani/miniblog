@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="col-sm-10">
+    <h3 class="my-5 text-center alert alert-info">Blog</h3>
+        <div class="p-2 mb-2 rounded-2   bg -dark bg-gradient">
+          <div class="container-fluid py-2">
+            <h1 class="display-10 fw-sm">{{ data.title }}</h1>
+            <p class="col-md-15 fs-5">{{ data.desc }}</p>
+          </div>
+          <a href="{% url 'home' %}" class="btn btn-info">Back</a>
+        </div>
+  </div>
+{% endblock content %}
