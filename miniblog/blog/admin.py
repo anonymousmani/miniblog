@@ -3,10 +3,12 @@ from .models import *
 
 # Register your models here.
 
-@admin.register(Post)
 class post_admin(admin.ModelAdmin):
-    list_display = ('id', 'title' )
+    list_display = ('id', 'title', 'desc')
 
-'''class contact_admin(admin.ModelAdmin):
-    list_display = ('name',)'''
+class contact_admin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'address', 'message')
+
+admin.site.register(Post, post_admin)
+admin.site.register(contact, contact_admin)
 
